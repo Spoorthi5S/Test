@@ -1,0 +1,129 @@
+1.Java Collection Hierarchy is the hierarchy of the collection framework it contains four core 
+interfaces they are Collection, Set, Map and List, Queue. 
+parent most class of collections is Iterable.
+
+                                    Iterable
+									    |
+									Collection--1. list
+									            2. Set -- SortedSet
+												3. Queue 
+												4. Deque
+									
+
+Main interfaces are list , set, sortedset, queue, iterator, forEach, Stream.
+and also we use methods like add(),remove(),set().
+
+List: * list is an interface it is available in java.util package
+      * it contains null / duplicate value.
+	  * it maintains the insertion order.
+	  * it is index based.
+Set: * set is an interface it is available in java.util package
+     * it does not contains duplicate values
+	 * it does not maintain the insertion order
+	 * not index based.
+	 
+2. Map is an interface available in java.util package 
+* it stores the data in key and value pairs. 
+* It does not allow duplicate keys.
+
+Map--Extends -- SortedMap -- Implements -- Tree Map
+   -- Implements -- HashMap -- Extends -- LinkedHashMap
+   
+3. HashSet :* HashSet allows a null object 
+            * Hash set use equals method to compare two objects 
+			* HashSet does not maintain any order 
+			* doesnot allow duplicate values
+   TreeSet :* The tree set does not allow the null object,It throws the null pointer exception. 
+            * Tree set use compare method for comparing two objects. 
+			* allow duplicate values.
+            * TreeSet maintains an object in sorted order.
+			
+5.  Fail Fast Iterator:
+      1)The iterator in Java is used to traverse over a collection's objects.
+      2)The collections return two types of iterators, either it will be Fail Fast or Fail Safe.
+      3)The Fail Fast iterators immediately throw ConcurrentModificationException in case of structural modification of the collection.
+      4)Structural modification means adding, removing, updating the value of an element in a data collection.
+FailSafe Iterator :-
+       1)We can perform the modification operations on a collection while iterating over it.
+       2)They will not throw ConcurrentModificationException during the iteration.
+       3)The Fail Safe iterators use a copy of the collection to traverse over the elements.
+       4)Unlike the Fail Fast, they require more memory as they cloned the collection.
+       5)The examples of Fail Safe iterators are ConcurrentHashMap, CopyOnWriteArrayList, etc.
+	   
+6. Steps to convert String to Stream of Chars :-  
+       1)Get the String.
+       2)Create a List of Characters.
+       3)Convert to String to IntStream using chars() method.
+       4)Convert IntStream to Stream using mapToObj() method.
+       5)Collect the elements as a List Of Characters using collect()
+       6)Return the List.
+	   
+8. Joining Strings
+   Splitting Strings
+   String Array
+   Testing.
+	   
+9. Core(spring-core)is the core of the framework that power features such as Inversion of Control and dependency injection. 
+Beans(spring-beans) provides Beanfactory,which is a sophisticated implementation of the factory pattern.			
+
+10.Dependency Injection in Java is a way to achieve Inversion of control(IoC)in our application by moving 
+objects binding from compile time to runtime.
+We can achieve IoC through Factory Pattern,Template Method Design Pattern, Strategy Pattern and 
+Service Locator pattern.
+
+15. Spring AOP:it is stands for Aspect-oriented programming 
+ * it is one of the major components of the Spring Framework.
+* The Spring AOP helps in breaking down the logic of the program into several distinct parts.
+
+IOC -- inversion of control
+* It is the mechanism to achieve loose-coupling between Objects dependencies. 
+
+@Component: create and maintained by spring.
+* Spring Component annotation is used to denote a class as Component.
+* It means that Spring framework will autodetect these classes for dependency injection
+ when annotation-based configuration and classpath scanning is used.
+ 
+@ComponentScan:One of the most important annotations in spring is @ComponentScan which is used along 
+with the @Configuration annotation to specify the packages that we want to be scanned.
+* @ComponentScan without arguments tells Spring to scan the current package and all of its sub-packages.
+
+@Bean :it is created and mintained by spring IOC.
+A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container.
+
+13. String builder : string builder objects re not synchronized and not thread for safe.
+String buffer : Strig buffer synchronized and thread safe.
+
+16.public class Country {
+	public static void main(String[] args) {
+		Map<String, Integer> map=new TreeMap<String, Integer>();
+		map.put("India", 91);
+		map.put("UK", 32);
+		map.put("USA", 13);
+		map.put("UAE", 42);
+		map.put("China", 52);
+		
+		Set<Entry<String, Integer>> entry= map.entrySet();
+		entry.forEach(ele->System.out.println(ele));
+		
+		map.forEach((key,value)->{if(value==52) {System.out.println(key);}});
+			
+		Iterator<Entry<String, Integer>> itr=entry.iterator();
+		while(itr.hasNext()) {
+			Entry<String, Integer> ent= itr.next();
+			if(ent.getValue()==42) {
+				itr.remove();
+				for (Entry<String, Integer> entry2 : entry) {
+					System.out.println(entry2);
+				}
+			}
+		}
+		
+		
+	}
+}
+
+17. Tomcat : it helps to develop web server.
+    Quarcus: it helps to perform validaation.
+	server :it is a connections between 2 systems.
+	Maven : it is used for java projects.
+	        it helps to get jar files and to download dependencies and some libraries.

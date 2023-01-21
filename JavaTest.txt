@@ -1,0 +1,93 @@
+1.import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class FirstQuestion {
+
+	public static void main(String[] args) {
+		List<Integer> list = new ArrayList<>(Arrays.asList(45,333,76,29,900,23,474,654,29,454));
+		
+		System.out.println("Maximum value : "+ Collections.min(list));
+		
+		System.out.println("Minimum value : "+ Collections.max(list));
+
+	}
+
+}
+
+2.public static boolean flowersPetals(int flower1Petals, int flower2Petals) {
+			return false;
+			
+		}
+		
+		    public static void main(String[] args) {
+
+		        Scanner flower1 = new Scanner(System.in);
+		        Scanner flower2 = new Scanner(System.in);
+
+		        
+				System.out.print("Enter a number of petals: ");
+		        int num1 = flower1.nextInt();
+		        int num2 = flower2.nextInt();
+		        flowersPetals(num1,num2);
+		        
+		        if(num1%2==0 && num2%2==0) {
+		        	System.out.println("They are not in love");
+		        }else {
+		        	System.out.println("They are in love");
+		        }
+		    }
+		}
+
+3. Generalized:
+	Converting a subclass type into a superclass type is called Generalization,
+	because we are making the subclass to become more general and its scope is widening
+	and this is also called as Up-casting.
+	
+   Specialized:
+	Converting a super class type into a sub class type is called ‘Specialization‘.
+	Here,we are coming down from more general form to a specific form and hence the scope is narrowed.
+	and this is also called Down-casting.
+
+4. a) We should declared our class as final. But can't define our class as final, if it is an abstract class.
+	A class declared as final can't be extended by any other class.
+   b) java.lang.String,  java.lang.Math are final classes.
+   c) Delegation can be an alternative to inheritance.
+   
+5. To sort a list we can use List and Collections, sort(),To make sure elements in the list are unique
+	and always sorted, use a SortedSet.
+	
+6. LinkedList : i] LinkedList internally uses the node.
+				ii] LinkedList internally uses a doubly linked list to store the elements.
+				iii] Manipulation with LinkedList is faster than ArrayList because it uses a doubly linked list,
+	so no bit shifting is required in memory.
+				iv] LinkedList is better for manipulating data.
+   ArrayList : i] Elements stored in a sequence list.
+			   ii] ArrayList internally uses a dynamic array to store the elements.
+			   iii] Manipulation with LinkedList is slow.because it internally uses an array.
+	If any element is removed from the array,all the other elements are shifted in memory.
+			   iv]  ArrayList is better for storing and accessing data.
+			   
+7. Iterator :Iterators are used in Collection to retrieve elements one by one. 
+			* It can be applied to any Collection object.
+           	* By using Iterator, we can perform both read and remove operations.
+			* Iterator must be used whenever we want to enumerate elements in all
+			Collection implemented interfaces like Set, List, Queue.
+			
+   ListIterator :It is only applicable for List collection.
+				* list Collection implemented classes like arraylist,linkedlist etc.
+				* It provides bi-directional iteration.
+				* ListIterator must be used when we want to enumerate elements of List.
+				* List Iterator has more methods than iterator.
+				
+8. Covariant Method overriding means that when overriding a method in child class the return type may vary.
+
+9. A Memory Leak is a situation where there are objects present in the heap that are no longer used,
+ but the garbage collector is unable to remove them from memory,and therefore, they're unnecessarily maintained.
+ 
+10. Static polymorphism is a type of polymorphism that collects the information to call a method during compile time.
+ dynamic polymorphism is a type of polymorphism that collects information to call a method at run time. 
+ 
+11. She can give security for her programs by making  properties as privite and providing access by setter and getter methos and this also called as encapsulatiom so she can give security for her programs.
+ or she can use the property of the Oops called Abstract calss she can give security .
